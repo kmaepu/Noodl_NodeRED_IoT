@@ -4,4 +4,4 @@ NoodlとNode-NodeREDを使用した、ノンコ―デングIoTシステムのサ
 
 詳しくは下記URLを参照して下さい。
 
-https://qiita.com/drafts/2a0fcb8e5e00bd303c62
+https://qiita.com/kmaepu/items/2a0fcb8e5e00bd303c62
