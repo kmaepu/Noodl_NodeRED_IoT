@@ -1,0 +1,392 @@
+{
+    "name": "IoT demo",
+    "components": [
+        {
+            "name": "/Main",
+            "graph": {
+                "connections": [
+                    {
+                        "fromId": "2d3ccd33-f1ef-2dc5-3e1a-ca9d61cd222b",
+                        "fromProperty": "touch.press",
+                        "toId": "463b1af7-49ca-f1b8-96bc-cab210accf7d",
+                        "toProperty": "to-ON"
+                    },
+                    {
+                        "fromId": "2d3ccd33-f1ef-2dc5-3e1a-ca9d61cd222b",
+                        "fromProperty": "touch.release",
+                        "toId": "463b1af7-49ca-f1b8-96bc-cab210accf7d",
+                        "toProperty": "to-OFF"
+                    },
+                    {
+                        "fromId": "463b1af7-49ca-f1b8-96bc-cab210accf7d",
+                        "fromProperty": "size",
+                        "toId": "c5164bab-811e-aa31-58b9-ca51f5fc1cdf",
+                        "toProperty": "width"
+                    },
+                    {
+                        "fromId": "463b1af7-49ca-f1b8-96bc-cab210accf7d",
+                        "fromProperty": "size",
+                        "toId": "908bd9b4-e216-0d56-9c37-1d656d151ec6",
+                        "toProperty": "width"
+                    },
+                    {
+                        "fromId": "463b1af7-49ca-f1b8-96bc-cab210accf7d",
+                        "fromProperty": "value",
+                        "toId": "35704cdd-74ce-b8bc-0f87-bffb95e2a00b",
+                        "toProperty": "LED1"
+                    }
+                ],
+                "roots": [
+                    {
+                        "id": "2d3ccd33-f1ef-2dc5-3e1a-ca9d61cd222b",
+                        "type": "Group",
+                        "label": "Root",
+                        "x": -60,
+                        "y": 30,
+                        "parameters": {
+                            "fill": "parent"
+                        },
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": [
+                            {
+                                "id": "fa90ea16-1232-0437-deea-5dd6263d8247",
+                                "type": "Rectangle",
+                                "label": "Background",
+                                "x": 20,
+                                "y": 117,
+                                "parameters": {},
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            },
+                            {
+                                "id": "189062e3-73dc-05ee-617c-55a3c2f1cc31",
+                                "type": "Text",
+                                "label": "name",
+                                "x": 222,
+                                "y": 234,
+                                "parameters": {
+                                    "alignX": "center",
+                                    "alignY": "center",
+                                    "text": "Push!!\n",
+                                    "fontSize": 150,
+                                    "color": "#000000",
+                                    "sizeMode": "childSize",
+                                    "y": -200
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            },
+                            {
+                                "id": "c5164bab-811e-aa31-58b9-ca51f5fc1cdf",
+                                "type": "Circle",
+                                "label": "Shadow Circle",
+                                "x": 20,
+                                "y": 239,
+                                "parameters": {
+                                    "width": {
+                                        "value": 300,
+                                        "unit": "px"
+                                    },
+                                    "alignX": "center",
+                                    "alignY": "center",
+                                    "color": "#000000",
+                                    "opacity": 0.5,
+                                    "visible": true,
+                                    "blur": 30
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            },
+                            {
+                                "id": "908bd9b4-e216-0d56-9c37-1d656d151ec6",
+                                "type": "Circle",
+                                "x": 20,
+                                "y": 183,
+                                "parameters": {
+                                    "width": {
+                                        "value": 300,
+                                        "unit": "px"
+                                    },
+                                    "alignY": "center",
+                                    "alignX": "center",
+                                    "color": "#0433FF"
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": "463b1af7-49ca-f1b8-96bc-cab210accf7d",
+                        "type": "States",
+                        "x": -251.33333333333331,
+                        "y": 78.5,
+                        "parameters": {
+                            "states": "ON,OFF",
+                            "startState": "OFF",
+                            "values": "size,value",
+                            "value-ON-size": 300,
+                            "value-ON-value": 1,
+                            "value-OFF-size": 100,
+                            "value-OFF-value": 0
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "type": {
+                                    "name": "number",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "output",
+                                "group": "Values",
+                                "name": "size",
+                                "index": 6
+                            },
+                            {
+                                "type": {
+                                    "name": "number",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "output",
+                                "group": "Values",
+                                "name": "value",
+                                "index": 7
+                            },
+                            {
+                                "plug": "input",
+                                "type": "number",
+                                "group": "ON Values",
+                                "name": "value-ON-size",
+                                "displayName": "size",
+                                "editorName": "ON|size",
+                                "index": 8
+                            },
+                            {
+                                "plug": "input",
+                                "type": "number",
+                                "group": "ON Values",
+                                "name": "value-ON-value",
+                                "displayName": "value",
+                                "editorName": "ON|value",
+                                "index": 9
+                            },
+                            {
+                                "plug": "input",
+                                "type": {
+                                    "name": "enum",
+                                    "enums": [
+                                        {
+                                            "value": "easeOut",
+                                            "label": "Ease Out"
+                                        },
+                                        {
+                                            "value": "easeIn",
+                                            "label": "Ease In"
+                                        },
+                                        {
+                                            "value": "linear",
+                                            "label": "Linear"
+                                        },
+                                        {
+                                            "value": "easeInOut",
+                                            "label": "Ease In Out"
+                                        },
+                                        {
+                                            "value": "cubicBezier",
+                                            "label": "Cubic Bezier"
+                                        }
+                                    ]
+                                },
+                                "default": "easeOut",
+                                "displayName": "Easing Curve",
+                                "group": "ON Transition",
+                                "name": "transition-ON",
+                                "index": 10
+                            },
+                            {
+                                "plug": "input",
+                                "type": "number",
+                                "default": 300,
+                                "displayName": "Duration",
+                                "group": "ON Transition",
+                                "name": "duration-ON",
+                                "index": 11
+                            },
+                            {
+                                "plug": "input",
+                                "type": {
+                                    "name": "boolean",
+                                    "allowConnectionsOnly": true
+                                },
+                                "displayName": "To ON",
+                                "name": "to-ON",
+                                "group": "Go to state",
+                                "index": 12
+                            },
+                            {
+                                "plug": "output",
+                                "type": "boolean",
+                                "displayName": "At ON",
+                                "name": "at-ON",
+                                "group": "Current state",
+                                "index": 13
+                            },
+                            {
+                                "plug": "output",
+                                "type": "signal",
+                                "displayName": "Has Reached ON",
+                                "name": "reached-ON",
+                                "group": "Current state",
+                                "index": 14
+                            },
+                            {
+                                "plug": "input",
+                                "type": "number",
+                                "group": "OFF Values",
+                                "name": "value-OFF-size",
+                                "displayName": "size",
+                                "editorName": "OFF|size",
+                                "index": 15
+                            },
+                            {
+                                "plug": "input",
+                                "type": "number",
+                                "group": "OFF Values",
+                                "name": "value-OFF-value",
+                                "displayName": "value",
+                                "editorName": "OFF|value",
+                                "index": 16
+                            },
+                            {
+                                "plug": "input",
+                                "type": {
+                                    "name": "enum",
+                                    "enums": [
+                                        {
+                                            "value": "easeOut",
+                                            "label": "Ease Out"
+                                        },
+                                        {
+                                            "value": "easeIn",
+                                            "label": "Ease In"
+                                        },
+                                        {
+                                            "value": "linear",
+                                            "label": "Linear"
+                                        },
+                                        {
+                                            "value": "easeInOut",
+                                            "label": "Ease In Out"
+                                        },
+                                        {
+                                            "value": "cubicBezier",
+                                            "label": "Cubic Bezier"
+                                        }
+                                    ]
+                                },
+                                "default": "easeOut",
+                                "displayName": "Easing Curve",
+                                "group": "OFF Transition",
+                                "name": "transition-OFF",
+                                "index": 17
+                            },
+                            {
+                                "plug": "input",
+                                "type": "number",
+                                "default": 300,
+                                "displayName": "Duration",
+                                "group": "OFF Transition",
+                                "name": "duration-OFF",
+                                "index": 18
+                            },
+                            {
+                                "plug": "input",
+                                "type": {
+                                    "name": "boolean",
+                                    "allowConnectionsOnly": true
+                                },
+                                "displayName": "To OFF",
+                                "name": "to-OFF",
+                                "group": "Go to state",
+                                "index": 19
+                            },
+                            {
+                                "plug": "output",
+                                "type": "boolean",
+                                "displayName": "At OFF",
+                                "name": "at-OFF",
+                                "group": "Current state",
+                                "index": 20
+                            },
+                            {
+                                "plug": "output",
+                                "type": "signal",
+                                "displayName": "Has Reached OFF",
+                                "name": "reached-OFF",
+                                "group": "Current state",
+                                "index": 21
+                            },
+                            {
+                                "plug": "input",
+                                "type": {
+                                    "name": "enum",
+                                    "enums": [
+                                        "ON",
+                                        "OFF"
+                                    ]
+                                },
+                                "group": "States",
+                                "displayName": "Start at",
+                                "name": "startState",
+                                "default": "ON",
+                                "index": 22
+                            }
+                        ],
+                        "children": []
+                    },
+                    {
+                        "id": "35704cdd-74ce-b8bc-0f87-bffb95e2a00b",
+                        "type": "Send Message",
+                        "x": -313.3333333333333,
+                        "y": 346.5,
+                        "parameters": {
+                            "topic": "/send",
+                            "publishOnInputsChanged": true,
+                            "rateLimit": true,
+                            "maxMessagesPerSecond": 1
+                        },
+                        "ports": [
+                            {
+                                "name": "LED1",
+                                "plug": "input",
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionOnly": true
+                                },
+                                "group": "Payload",
+                                "index": 1
+                            }
+                        ],
+                        "dynamicports": [],
+                        "children": []
+                    }
+                ]
+            }
+        }
+    ],
+    "settings": {
+        "devices": "Default Device",
+        "Default Device.fillMode": "aspectFit",
+        "Default Device.canvasWidth": 1080,
+        "Default Device.canvasHeight": 1920,
+        "mqttUseExternalBroker": true,
+        "mqttBrokerUrl": ""
+    },
+    "rootNodeId": "2d3ccd33-f1ef-2dc5-3e1a-ca9d61cd222b",
+    "version": "1"
+}
